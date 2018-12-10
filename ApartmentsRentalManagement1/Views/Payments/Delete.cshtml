@@ -1,0 +1,47 @@
+﻿@model ApartmentsRentalManagement1.Models.Payment
+
+@{
+    ViewBag.Title = "Cancel Rent Payment";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue">Cancel Rent Payment</h2>
+
+<hr />
+
+<h3 class="common-font blue">Are you sure that you want to cancel this payment?</h3>
+
+<div>
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.PaymentID)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ReceiptNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.ReceiptNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmployeeID)</dt>
+        <dd>@Html.DisplayFor(model => model.EmployeeID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.RentContractID)</dt>
+        <dd>@Html.DisplayFor(model => model.RentContractID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.PaymentDate)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentDate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Amount)</dt>
+        <dd>@Html.DisplayFor(model => model.Amount)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Notes)</dt>
+        <dd>@Html.DisplayFor(model => model.Notes)</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Rent Payments", "Index") ::
+            <input type="submit" value="Delete Rent Payment" class="btn btn-primary" />
+        </div>
+    }
+</div>

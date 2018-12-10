@@ -1,0 +1,45 @@
+﻿@model ApartmentsRentalManagement1.Models.RentContract
+
+@{
+    ViewBag.Title = "Rental Contract Details";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Rental Contract Details</h2>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.RentContractID)</dt>
+        <dd>@Html.DisplayFor(model => model.RentContractID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmployeeID)</dt>
+        <dd>@Html.DisplayFor(model => model.EmployeeID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ContractDate)</dt>
+        <dd>@Html.DisplayFor(model => model.ContractDate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.FirstName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.LastName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.MaritalStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.MaritalStatus)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.NumberOfChildren)</dt>
+        <dd>@Html.DisplayFor(model => model.NumberOfChildren)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ApartmentID)</dt>
+        <dd>@Html.DisplayFor(model => model.ApartmentID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.RentStartDate)</dt>
+        <dd>@Html.DisplayFor(model => model.RentStartDate)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentContractID }) |
+    @Html.ActionLink("Rental Contracts", "Index")
+</p>

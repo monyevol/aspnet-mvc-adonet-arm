@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ApartmentsRentalManagement1.Models.RentContract>
+
+@{
+    ViewBag.Title = "Rent Contracts";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Rent Contracts</h2>
+
+<table class="table table-hover common-font">
+    <tr>
+        <th class="text-center">@Html.DisplayNameFor(model => model.RentContractID)</th>
+        <th class="text-center">@Html.DisplayNameFor(model => model.ContractNumber)</th>
+        <th class="text-center">@Html.DisplayNameFor(model => model.EmployeeID)</th>
+        <th class="text-center">@Html.DisplayNameFor(model => model.ContractDate)</th>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.LastName)</th>
+        <th>@Html.DisplayNameFor(model => model.MaritalStatus)</th>
+        <th>@Html.DisplayNameFor(model => model.NumberOfChildren)</th>
+        <th>@Html.DisplayNameFor(model => model.ApartmentID)</th>
+        <th class="text-center">@Html.DisplayNameFor(model => model.RentStartDate)</th>
+        <th class="text-center">@Html.ActionLink("Start New Rent Contract", "Create")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.RentContractID)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.ContractNumber)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.EmployeeID)</td>
+            <td class="text-center">@item.ContractDate.ToShortDateString()</td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+            <td>@Html.DisplayFor(modelItem => item.MaritalStatus)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.NumberOfChildren)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.ApartmentID)</td>
+            <td class="text-center">@item.RentStartDate.ToShortDateString()</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.RentContractID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.RentContractID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.RentContractID })
+            </td>
+        </tr>
+    }
+</table>

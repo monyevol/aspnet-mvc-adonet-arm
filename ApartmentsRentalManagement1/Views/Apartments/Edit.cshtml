@@ -1,0 +1,64 @@
+﻿@model ApartmentsRentalManagement1.Models.Apartment
+
+@{
+    Layout = "~/Views/Shared/_Management.cshtml";
+    ViewBag.Title = "Edit/Update Apartment Information";
+}
+
+<h2 class="bold common-font blue">Edit/Update Residence Details</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal common-font">
+        <div class="form-group">
+            <label for="unitNbr" class="control-label col-md-2">Unit #:</label>
+            <div class="col-md-10">
+                @Html.TextBox("UnitNumber", null, htmlAttributes: new { @class = "form-control", id = "unitNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="beds" class="control-label col-md-2">Bedrooms:</label>
+            <div class="col-md-10">
+                @Html.TextBox("Bedrooms", null, htmlAttributes: new { @class = "form-control", id = "beds" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="baths" class="control-label col-md-2">Bathrooms:</label>
+            <div class="col-md-10">
+                @Html.TextBox("Bathrooms", null, htmlAttributes: new { @class = "form-control", id = "baths" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="rentPerMonth" class="control-label col-md-2">Monthly Rate:</label>
+            <div class="col-md-10">
+                @Html.TextBox("MonthlyRate", null, htmlAttributes: new { @class = "form-control", id = "rentPerMonth" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="deposit" class="control-label col-md-2">Security Deposit:</label>
+            <div class="col-md-10">
+                @Html.TextBox("SecurityDeposit", null, htmlAttributes: new { @class = "form-control", id = "deposit" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="occupancyStatus" class="control-label col-md-2">Occupancy Status:</label>
+            <div class="col-md-10">
+                @Html.DropDownList("OccupancyStatus", null, htmlAttributes: new { @class = "form-control", id = "occupancyStatus" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">@Html.ActionLink("Apartments Inventory", "Index")</label>
+            <div class="col-md-10">
+                <input type="submit" value="Update Apartment Information" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

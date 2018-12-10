@@ -1,0 +1,85 @@
+﻿@model ApartmentsRentalManagement1.Models.RentContract
+
+@{
+    ViewBag.Title = "New Rental Contract";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue">Create Rental Contract</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal common-font">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContractNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContractNumber, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="employee" class="control-label col-md-2">Processed By</label>
+            <div class="col-md-10">
+                @Html.DropDownList("EmployeeID", null, htmlAttributes: new { @class = "form-control", id = "employee" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ContractDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ContractDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="maritalStatus" class="control-label col-md-2">Marital Status</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaritalStatus", null, htmlAttributes: new { @class = "form-control", id = "maritalStatus" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NumberOfChildren, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumberOfChildren, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="apart" class="control-label col-md-2">Apartment</label>
+            <div class="col-md-10">
+                @Html.DropDownList("ApartmentID", null, htmlAttributes: new { @class = "form-control", id = "apart" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RentStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RentStartDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">@Html.ActionLink("Rental Contracts", "Index")</label>
+            <div class="col-md-10">
+                <input type="submit" value="Create Rental Contract" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

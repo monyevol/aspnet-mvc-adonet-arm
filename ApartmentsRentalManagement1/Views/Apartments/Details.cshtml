@@ -1,0 +1,37 @@
+﻿@model ApartmentsRentalManagement1.Models.Apartment
+
+@{
+    ViewBag.Title = "Apartment Details";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Apartment Details</h2>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.ApartmentID)</dt>
+        <dd>@Html.DisplayFor(model => model.ApartmentID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Bedrooms)</dt>
+        <dd>@Html.DisplayFor(model => model.Bedrooms)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Bathrooms)</dt>
+        <dd>@Html.DisplayFor(model => model.Bathrooms)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.MonthlyRate)</dt>
+        <dd>@Html.DisplayFor(model => model.MonthlyRate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.SecurityDeposit)</dt>
+        <dd>@Html.DisplayFor(model => model.SecurityDeposit)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.OccupancyStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.OccupancyStatus)</dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit Rent Contract", "Edit", new { id = Model.ApartmentID }) |
+    @Html.ActionLink("Rental Contracts", "Index")
+</p>

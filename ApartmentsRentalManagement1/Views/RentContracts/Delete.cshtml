@@ -1,0 +1,54 @@
+﻿@model ApartmentsRentalManagement1.Models.RentContract
+
+@{
+    ViewBag.Title = "Delete Rent Contract";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue">Delete Rent Contract</h2>
+
+<hr />
+
+<h3 class="common-font blue">Are you sure you want to delete this rent contract?</h3>
+
+<div>
+    <dl class="dl-horizontal common-font">
+        <dt>@Html.DisplayNameFor(model => model.RentContractID)</dt>
+        <dd>@Html.DisplayFor(model => model.RentContractID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ContractNumber)</dt>
+        <dd>@Html.DisplayFor(model => model.ContractNumber)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmployeeID)</dt>
+        <dd>@Html.DisplayFor(model => model.EmployeeID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ContractDate)</dt>
+        <dd>@Html.DisplayFor(model => model.ContractDate)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FirstName)</dt>
+        <dd>@Html.DisplayFor(model => model.FirstName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.LastName)</dt>
+        <dd>@Html.DisplayFor(model => model.LastName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.MaritalStatus)</dt>
+        <dd>@Html.DisplayFor(model => model.MaritalStatus)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.NumberOfChildren)</dt>
+        <dd>@Html.DisplayFor(model => model.NumberOfChildren)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.ApartmentID)</dt>
+        <dd>@Html.DisplayFor(model => model.ApartmentID)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.RentStartDate)</dt>
+        <dd>@Html.DisplayFor(model => model.RentStartDate)</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Rent Contracts", "Index") ::
+            <input type="submit" value="Delete this Rent Contract" class="btn btn-primary" />
+        </div>
+    }
+</div>

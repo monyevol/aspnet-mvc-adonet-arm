@@ -1,0 +1,64 @@
+﻿@model ApartmentsRentalManagement1.Models.Payment
+
+@{
+    ViewBag.Title = "Make Rent Payment";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold common-font blue">Make Rent Payment</h2>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal common-font">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReceiptNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReceiptNumber, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="employee" class="control-label col-md-2">Processed By</label>
+            <div class="col-md-10">
+                @Html.DropDownList("EmployeeID", null, htmlAttributes: new { @class = "form-control", id = "employee" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="contractNbr" class="control-label col-md-2">Rent Contract</label>
+            <div class="col-md-10">
+                @Html.DropDownList("RentContractID", null, htmlAttributes: new { @class = "form-control", id = "contractNbr" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PaymentDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PaymentDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">@Html.ActionLink("Rent Payments", "Index")</label>
+            <div class="col-md-10">
+                <input type="submit" value="Make Rent Payment" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

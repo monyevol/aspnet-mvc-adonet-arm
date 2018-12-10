@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ApartmentsRentalManagement1.Models.Payment>
+
+@{
+    ViewBag.Title = "Rent Payments";
+    Layout = "~/Views/Shared/_Management.cshtml";
+}
+
+<h2 class="bold blue common-font text-center">Rent Payments</h2>
+
+<table class="table table-hover common-font">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.PaymentID)</th>
+        <th>@Html.DisplayNameFor(model => model.ReceiptNumber)</th>
+        <th>@Html.DisplayNameFor(model => model.EmployeeID)</th>
+        <th>@Html.DisplayNameFor(model => model.RentContractID)</th>
+        <th>@Html.DisplayNameFor(model => model.PaymentDate)</th>
+        <th>@Html.DisplayNameFor(model => model.Amount)</th>
+        <th>@Html.DisplayNameFor(model => model.Notes)</th>
+        <th>@Html.ActionLink("New Rent Payment", "Create")</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        //string strPaymentDate = ;
+        <tr>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.PaymentID)</td>
+            <td>@Html.DisplayFor(modelItem => item.ReceiptNumber)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.EmployeeID)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.RentContractID)</td>
+            <td>@item.PaymentDate.ToLongDateString()</td>
+            <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+            <td>@Html.DisplayFor(modelItem => item.Notes)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PaymentID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PaymentID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PaymentID })
+            </td>
+        </tr>
+    }
+</table>
